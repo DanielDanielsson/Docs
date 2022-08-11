@@ -107,7 +107,8 @@ And add the following to respective file:
 
 And thats is! 🏁
 
-got stuck or got any feedback? Please leave a comment! ✍️
+Got stuck or got any feedback? Please leave a comment! ✍️
+
 Considered this helpfull? Please star the repo 🌟
 
 
