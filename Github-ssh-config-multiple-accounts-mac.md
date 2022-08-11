@@ -105,7 +105,10 @@ And add the following to respective file:
  email = user1@email.com
 ```
 
-And thats is! 
+And thats is! 🏁
+
+got stuck or got any feedback? Please leave a comment! ✍️
+Considered this helpfull? Please star the repo 🌟
 
 
 
