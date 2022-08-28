@@ -79,7 +79,7 @@ Hi user1! You've successfully authenticated, but GitHub does not provide shell a
 ```
 
 ### 7. Time to clone some repos! 
-Repo in github will show this clone URL: 
+Repository in github will show this clone URL: 
 ```
 git clone git@github.com:AccountName/pathtoproject.git
 ```
@@ -87,6 +87,11 @@ Here you need to add your username like this:
 
 ```
 git clone git@github.com-user1:AccountName/pathtoproject.git
+```
+
+useful tip is to check your remotes using: 
+```
+git remote -v
 ```
 
 ### 8. Change .gitconfig according to current directory.
