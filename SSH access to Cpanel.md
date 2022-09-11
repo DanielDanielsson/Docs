@@ -70,8 +70,15 @@ And you sould get this response:
 
 
 
+## 2. Add a repository in cpanel git verision control
 
-    
+go to cpanel and enter Git Version Control.
+
+Click Create to add a repository
+
+<img width="677" alt="image" src="https://user-images.githubusercontent.com/47527390/189514336-fe4f7f32-9b28-4369-9cb4-371aee160c07.png">
+
+ Add the path to your repo and give it a name. 
     
 
 ## 2. Add a .cpanel.yml file to your project
@@ -112,5 +119,7 @@ $ git push cpanel main
 ```
 
 Sources: 
+
 https://support.cpanel.net/hc/en-us/articles/4404218477207-How-to-Configure-SSH-Key-Authentication-for-Use-with-cPanel-Git-Version-Control
+
 https://dev.to/cheerupemodev/continuous-deployment-of-a-gatsby-site-to-cpanel-with-git-version-control-5ha2
