@@ -104,10 +104,10 @@ global and local gitconfig. You local can be found in ```.git/config```
 Add this to your .gitconfig in root: 
 
 ```
-[includeIf "gitdir:~/code/private/"]
-  path = .gitconfig-private
-[includeIf "gitdir:~/code/work"]
-  path = .gitconfig-work
+[includeIf “gitdir:~/code/privat/“]
+  path = ~/.gitconfig-privat
+[includeIf “gitdir:~/code/work/“]
+  path = ~/.gitconfig-work
 ```
 
 Now create the ```.gitconfig-private``` and ```.gitconfig-work``` files in root (```touch .gitconfig-private``` and ```touch .gitconfig-work```)
