@@ -23,6 +23,8 @@ $ ssh-keygen -t rsa -b 8192 -C "user2@email.com" -f "github-user2"
 -f flag specifies the file name for the key pair.
 ```
 
+For passphrase, you can add one or ignore it by pressing enter
+
 Now you should have public and private keys for both your accounts in your ```~/.ssh/``` directory.
 
 
