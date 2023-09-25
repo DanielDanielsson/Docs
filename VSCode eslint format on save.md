@@ -1,6 +1,11 @@
 # Eslint format on save
 
+This guide will let you migrate automatic code formatting with Prettier rules defined in a .prettierrc or prettier.config.js file to automatic formating with eslint. Part 1 of this guide will walk you through the process of migrating your Prettier settings to ESLint. This ensures a seamless transition to using ESLint for code formatting when you enable the 'Format on Save' feature.
+
+However, if you're just interested in configuring VSCode to automatically format your code on save using ESLint, you can skip part 1 and go to part 2. 
+
 ## Part 1: Moving Prettier Rules to ESLint (Using Prettier ESLint Plugin)
+
 
 Install Required Packages:
 Before configuring ESLint for formatting, make sure you have ESLint, Prettier, and the Prettier ESLint plugin installed in your project. You can do this by running the following commands in your project's root directory:
@@ -21,17 +26,21 @@ In your project's root directory, create or update your ESLint configuration fil
 
 Or, if you already have a `.prettierrc` file with rules you want to keep, you can add it lite this: 
 
-```js
-rules: {
-'prettier/prettier': [
-      'error',
+```json
+{
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+"rules": {
+"prettier/prettier": [
+      "error",
       {
-        singleQuote: true,
-        endOfLine: 'auto',
-        tabWidth: 2,
-        quoteProps: 'consistent',
+        "singleQuote": true,
+        "endOfLine": "auto",
+        "tabWidth": 2,
+        "quoteProps": "consistent",
       },
     ],
+}
 }
 ```
 
