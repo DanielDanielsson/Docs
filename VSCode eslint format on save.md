@@ -4,32 +4,25 @@ This guide will let you migrate automatic code formatting with Prettier rules de
 
 However, if you're just interested in configuring VSCode to automatically format your code on save using ESLint, you can skip part 1 and go to part 2. 
 
-## Part 1: Moving Prettier Rules to ESLint (Using Prettier ESLint Plugin)
+## Part 1: Moving Prettier Rules to ESLint
 
-
-Install Required Packages:
-Before configuring ESLint for formatting, make sure you have ESLint, Prettier, and the Prettier ESLint plugin installed in your project. You can do this by running the following commands in your project's root directory:
+## Install Required Packages:
+Before configuring ESLint for formatting, make sure you have [ESLint](https://www.npmjs.com/package/eslint), [Prettier](https://www.npmjs.com/package/prettier), and the Prettier ESLint plugin installed in your project. You can do this by running the following commands in your project's root directory:
 
 ```bash
 npm install eslint prettier eslint-plugin-prettier eslint-config-prettier --save-dev
 ```
 
-Create or Update .eslintrc.json:
-In your project's root directory, create or update your ESLint configuration file (.eslintrc.json). Add the following configurations to it:
+*NOTE: We need both eslint-plugin-prettier and eslint-config-prettier. The difference between them is that the eslint-config-prettier turns off all rules that are unnecessary or might conflict with Prettier and the eslint-plugin-prettier will allow us to add prettier configuration to eslint rules in `eslintrc.json`.*
+
+## Create or Update .eslintrc.json:
+
+In order to migrate your rules from `.prettierrc` you can add them like this: 
 
 ```json
 {
   "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"]
-}
-```
-
-Or, if you already have a `.prettierrc` file with rules you want to keep, you can add it lite this: 
-
-```json
-{
-  "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": ["prettier"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -43,8 +36,17 @@ Or, if you already have a `.prettierrc` file with rules you want to keep, you ca
 }
 }
 ```
+[Here's a list of all available prettier options](https://prettier.io/docs/en/options)
 
-This configuration extends the recommended ESLint rules and integrates the Prettier ESLint plugin.
+if you just want prettiers recommended settings, you can add them like this: 
+```json
+{
+  "extends": ["prettier"],
+  "plugins": ["prettier"],
+  "extends": ["plugin:prettier/recommended"]
+}
+```
+*NOTE: The eslintrc.json file allows us to ommit the "eslint-config-" and "eslint-plugin-" part of the package names, which can make it confusing for when we add "prettier" to both the plugins and extends properties.*
 
-Remove Prettier Configuration:
-If you have a separate .prettierrc or prettier.config.js file, you can remove it because Prettier rules will now be handled by ESLint.
+## Remove Prettier Configuration:
+If you still have a separate .prettierrc or prettier.config.js file, you can remove it because Prettier rules will now be handled by ESLint.
